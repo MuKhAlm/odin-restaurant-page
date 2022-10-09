@@ -1,0 +1,76 @@
+:root {
+    --main-font-color: antiquewhite;
+    --main-bg-color: rgba(0, 0, 0, .7);
+    --main-header-font-size: 2rem;
+    --main-font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    margin: 0;
+    background-image: url(./assets/background.jpg);
+    height: 100%;
+    margin-bottom: 80px;
+}
+
+#content {
+    display: grid;
+    grid-area: 10px;
+    grid-template-rows: 1fr 2fr;
+    color: var(--main-font-color);
+    height: 100%;
+}
+
+header {
+    margin: 30px;
+    padding: 20px;
+    font-size: var(--main-header-font-size);
+    background-color: var(--main-bg-color);
+    text-align: center;
+}
+
+main {
+    display: grid;
+    margin: 30px;
+    margin-bottom: 80px;
+    padding: 20px;
+    background-color: var(--main-bg-color);
+    text-align: center;
+    font-size: var(--main-font-size);
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--main-bg-color);
+}
+
+.fa-github {
+    color: var(--main-font-color);
+    font-size: 30px;
+    transition: transform 0.3s;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+}
