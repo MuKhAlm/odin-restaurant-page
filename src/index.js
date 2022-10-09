@@ -11,18 +11,73 @@ class TabManager {
     // Create header
     this.createHeader();
 
-    // Create Main
-    let main = document.createElement('main');
-    contentDiv.appendChild(main)
-
-    // Create mainTab
+    // Create mainTab instance and set it to active
     this.mainTab = new MainTab();
-    let aboutTab = this.mainTab.createMainTab();
-    main.appendChild(aboutTab);
-    this.active = this.mainTab;
+    this.active = this.mainTab
+
+    // Create Main
+    this.createMain();
 
     // Create footer
     this.createFooter();
+
+    // Link tab buttons to switch tabs
+    this.linkTabButtons();
+  }
+
+  linkTabButtons = () => {
+    let tabs = [...document.getElementsByClassName('tab')];
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        this.switchTab(e.target.id);
+      })
+    })
+  }
+
+  /**
+   * 
+   * @param {string} target    name of the tab to be switched to in the format of "<name>-tab"
+   */
+  switchTab = (target) => {
+    if (target === 'contact-tab') {
+      // Erase active tab
+      this.active.eraseTab();
+      // Change tab button
+      activateTab('contact-tab');
+      // Create new contact tab
+      this.contactTab.createContactTab();
+      // Set active tab to contact tab
+      this.active = this.contactTab;
+    } 
+    if (target === 'main-tab') {
+      // Erase active tab
+      this.active.eraseTab();
+      // Change tab button
+      activateTab('main-tab');
+      // Create new main tab
+      this.mainTab.createMainTab();
+      // Set active tab to main tab
+      this.active = this.mainTab;
+    }
+
+    function activateTab(tabName) {
+      [...document.getElementsByClassName('tab')].map(tab => {
+        if (tab.classList.contains('active')) {
+          tab.classList.remove('active');
+        }
+      });
+      document.getElementById(tabName).classList.add('active');
+    }
+  }
+
+  createMain() {
+    let main = document.createElement('main');
+    contentDiv.appendChild(main);
+
+    // Create mainTab
+    let aboutTab = this.mainTab.createMainTab();
+    main.appendChild(aboutTab);
+    this.active = this.mainTab;
   }
 
   createFooter() {
