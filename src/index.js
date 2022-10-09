@@ -1,3 +1,5 @@
+import './styles.css';
+
 const contentDiv = document.getElementById('content');
 
 class MainScreen {
