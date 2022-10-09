@@ -39,7 +39,11 @@ class MainScreen {
     const footer = document.createElement('footer');
     const a = document.createElement('a');
     a.href = 'https://github.com/MuKhAlt/odin-restaurant-page.git';
-    a.textContent = 'GitHub';
+    const gitHubIcon = document.createElement('i');
+    gitHubIcon.classList.add('fa-github');
+    gitHubIcon.classList.add('fab');
+    gitHubIcon.style.fontSize = '30px';
+    a.appendChild(gitHubIcon);
     footer.appendChild(a);
     document.body.appendChild(footer);
   }
