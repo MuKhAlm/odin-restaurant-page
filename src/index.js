@@ -18,9 +18,13 @@ class MainScreen {
     tabs.id = 'tabs-container';
     // Create tab buttons
     const mainTab = document.createElement('button');
+    mainTab.className = 'tab';
+    mainTab.id = 'main-tab';
     mainTab.textContent = 'Main';
     const contactTab = document.createElement('button');
     contactTab.textContent = 'Contact';
+    contactTab.className = 'tab';
+    contactTab.id = 'contact-tab';
     tabs.append(mainTab, contactTab);
     header.appendChild(tabs);
 
