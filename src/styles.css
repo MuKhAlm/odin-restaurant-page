@@ -81,6 +81,11 @@ main {
     text-align: center;
 }
 
+#contact-container {
+    display: grid;
+    text-align: center;
+}
+
 #about-container > p {
     display: flex;
     flex-direction: column;
