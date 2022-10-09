@@ -1,55 +1,31 @@
 import './styles.css';
+import MainTab from './mainTab';
 
 const contentDiv = document.getElementById('content');
 
-class MainScreen {
+class TabManager {
+  mainTab;
+  active;
+
   constructor() {
     // Create header
-    const header = document.createElement('header');
-    // Create h1 element
-    const h1 = document.createElement('h1');
-    h1.textContent = 'Primordial Taste'
-    // Add h1 element to header
-    header.appendChild(h1);
-    // Add header to content div
-    contentDiv.appendChild(header);
-    // Create tabs div
-    const tabs = document.createElement('div');
-    tabs.id = 'tabs-container';
-    // Create tab buttons and add them
-    const mainTab = document.createElement('button');
-    mainTab.className = 'tab';
-    mainTab.classList.add('active')
-    mainTab.id = 'main-tab';
-    mainTab.textContent = 'Main';
-    const contactTab = document.createElement('button');
-    contactTab.textContent = 'Contact';
-    contactTab.className = 'tab';
-    contactTab.id = 'contact-tab';
-    tabs.append(mainTab, contactTab);
-    header.appendChild(tabs);
+    this.createHeader();
 
-    // Create main
-    const main = document.createElement('main');
-    // Create about-container div
-    const aboutContainer = document.createElement('div');
-    // Set aboutContainer ID
-    aboutContainer.id = 'about-container';
-    // Add about-container div to main
-    main.appendChild(aboutContainer);
-    // Create p elements
-    const p0 = document.createElement('p');
-    const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-    p0.textContent = 'Best food in the universe';
-    p1.textContent = 'Made with perfection since the down of time';
-    p2.textContent = 'Order via the ether or wrap to us!!';
-    // Add p elements to about-container
-    main.append(p0, p1, p2);
-    // Add main to content div
-    contentDiv.appendChild(main);
+    // Create Main
+    let main = document.createElement('main');
+    contentDiv.appendChild(main)
+
+    // Create mainTab
+    this.mainTab = new MainTab();
+    let aboutTab = this.mainTab.createMainTab();
+    main.appendChild(aboutTab);
+    this.active = this.mainTab;
 
     // Create footer
+    this.createFooter();
+  }
+
+  createFooter() {
     const footer = document.createElement('footer');
     const a = document.createElement('a');
     a.href = 'https://github.com/MuKhAlt/odin-restaurant-page.git';
@@ -60,6 +36,32 @@ class MainScreen {
     footer.appendChild(a);
     document.body.appendChild(footer);
   }
+
+  createHeader() {
+    const header = document.createElement('header');
+    // Create h1 element
+    const h1 = document.createElement('h1');
+    h1.textContent = 'Primordial Taste';
+    // Add h1 element to header
+    header.appendChild(h1);
+    // Add header to content div
+    contentDiv.appendChild(header);
+    // Create tabs div
+    const tabs = document.createElement('div');
+    tabs.id = 'tabs-container';
+    // Create tab buttons and add them
+    const mainTab = document.createElement('button');
+    mainTab.className = 'tab';
+    mainTab.classList.add('active');
+    mainTab.id = 'main-tab';
+    mainTab.textContent = 'Main';
+    const contactTab = document.createElement('button');
+    contactTab.textContent = 'Contact';
+    contactTab.className = 'tab';
+    contactTab.id = 'contact-tab';
+    tabs.append(mainTab, contactTab);
+    header.appendChild(tabs);
+  }
 }
 
-const mainScreen = new MainScreen();
+const tabManager = new TabManager();
