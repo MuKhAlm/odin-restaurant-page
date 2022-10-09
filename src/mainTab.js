@@ -2,7 +2,7 @@ import './styles.css';
 
 export default class MainTab {
   /**
-   * Creates the aboutContainer and adds it to main,
+   * Creates the aboutContainer and returns it,
    * 
    * @return    aboutCountainer
    */
