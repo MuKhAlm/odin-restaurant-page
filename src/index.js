@@ -42,7 +42,6 @@ class MainScreen {
     const gitHubIcon = document.createElement('i');
     gitHubIcon.classList.add('fa-github');
     gitHubIcon.classList.add('fab');
-    gitHubIcon.style.fontSize = '30px';
     a.appendChild(gitHubIcon);
     footer.appendChild(a);
     document.body.appendChild(footer);
