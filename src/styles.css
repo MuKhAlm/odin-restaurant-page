@@ -76,6 +76,17 @@ main {
     font-size: var(--main-font-size);
 }
 
+#about-container {
+    display: grid;
+    text-align: center;
+}
+
+#about-container > p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 footer {
     width: 100%;
     display: flex;
