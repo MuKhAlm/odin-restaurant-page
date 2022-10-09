@@ -55,7 +55,7 @@ class TabManager {
       // Change tab button
       activateTab('main-tab');
       // Create new main tab
-      this.mainTab.createMainTab();
+      this.mainTab.createTab();
       // Set active tab to main tab
       this.active = this.mainTab;
     }
@@ -75,7 +75,7 @@ class TabManager {
     contentDiv.appendChild(main);
 
     // Create mainTab
-    let aboutTab = this.mainTab.createMainTab();
+    let aboutTab = this.mainTab.createTab();
     main.appendChild(aboutTab);
     this.active = this.mainTab;
   }

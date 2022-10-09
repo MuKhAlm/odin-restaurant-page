@@ -6,7 +6,7 @@ export default class MainTab {
    * 
    * @return    aboutCountainer
    */
-  createMainTab() {
+  createTab() {
     // Create about-container div
     const aboutContainer = document.createElement('div');
     // Set aboutContainer ID
