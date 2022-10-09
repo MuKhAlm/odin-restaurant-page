@@ -4,7 +4,7 @@ const contentDiv = document.getElementById('content');
 
 class MainScreen {
   constructor() {
-    // Create a header element
+    // Create header
     const header = document.createElement('header');
     // Create h1 element
     const h1 = document.createElement('h1');
@@ -13,8 +13,18 @@ class MainScreen {
     header.appendChild(h1);
     // Add header to content div
     contentDiv.appendChild(header);
+    // Create tabs div
+    const tabs = document.createElement('div');
+    tabs.id = 'tabs-container';
+    // Create tab buttons
+    const mainTab = document.createElement('button');
+    mainTab.textContent = 'Main';
+    const contactTab = document.createElement('button');
+    contactTab.textContent = 'Contact';
+    tabs.append(mainTab, contactTab);
+    header.appendChild(tabs);
 
-    // Create a main element
+    // Create main
     const main = document.createElement('main');
     // Create about-container div
     const aboutContainer = document.createElement('div');
@@ -26,7 +36,6 @@ class MainScreen {
     const p0 = document.createElement('p');
     const p1 = document.createElement('p');
     const p2 = document.createElement('p');
-
     p0.textContent = 'Best food in the universe';
     p1.textContent = 'Made with perfection since the down of time';
     p2.textContent = 'Order via the ether or wrap to us!!';
