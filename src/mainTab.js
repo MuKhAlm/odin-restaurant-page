@@ -27,7 +27,7 @@ export default class MainTab {
   /**
    * Erases aboutContainer,
    */
-  eraseMainScreen() {
+  eraseTab() {
     document.getElementById('about-container').remove();
   }
 }
