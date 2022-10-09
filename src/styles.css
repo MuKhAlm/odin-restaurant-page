@@ -36,11 +36,34 @@ body {
 }
 
 header {
+    display: grid;
     margin: 30px;
     padding: 20px;
     font-size: var(--main-header-font-size);
     background-color: var(--main-bg-color);
     text-align: center;
+}
+
+.tab {
+    color: var(--main-font-color);
+    background-color: rgba(0, 0, 0, 0);
+    border: 0ch;
+    margin: 10px;
+    font-size: var(--main-font-size);
+}
+
+.tab.active {
+    border-bottom: 2px solid var(--main-font-color);
+}
+
+.tab:hover {
+    transform: scale(1.1);
+}
+
+#tabs-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
