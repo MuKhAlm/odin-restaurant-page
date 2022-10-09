@@ -92,6 +92,12 @@ main {
     justify-content: center;
 }
 
+#contact-container > p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 footer {
     width: 100%;
     display: flex;

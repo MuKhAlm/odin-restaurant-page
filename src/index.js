@@ -1,10 +1,12 @@
 import './styles.css';
 import MainTab from './mainTab';
+import ContactTab from './contactTab';
 
 const contentDiv = document.getElementById('content');
 
 class TabManager {
   mainTab;
+  contactTab;
   active;
 
   constructor() {
@@ -13,7 +15,10 @@ class TabManager {
 
     // Create mainTab instance and set it to active
     this.mainTab = new MainTab();
-    this.active = this.mainTab
+    this.active = this.mainTab;
+
+    // Init contactTab
+    this.contactTab = new ContactTab();
 
     // Create Main
     this.createMain();
@@ -45,7 +50,8 @@ class TabManager {
       // Change tab button
       activateTab('contact-tab');
       // Create new contact tab
-      this.contactTab.createContactTab();
+      const contactScreen = this.contactTab.createTab();
+      document.getElementsByTagName('main')[0].appendChild(contactScreen);
       // Set active tab to contact tab
       this.active = this.contactTab;
     } 
@@ -55,7 +61,8 @@ class TabManager {
       // Change tab button
       activateTab('main-tab');
       // Create new main tab
-      this.mainTab.createTab();
+      const mainScreen = this.mainTab.createTab();
+      document.getElementsByTagName('main')[0].appendChild(mainScreen);
       // Set active tab to main tab
       this.active = this.mainTab;
     }
