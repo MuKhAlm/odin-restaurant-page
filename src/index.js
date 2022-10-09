@@ -16,9 +16,10 @@ class MainScreen {
     // Create tabs div
     const tabs = document.createElement('div');
     tabs.id = 'tabs-container';
-    // Create tab buttons
+    // Create tab buttons and add them
     const mainTab = document.createElement('button');
     mainTab.className = 'tab';
+    mainTab.classList.add('active')
     mainTab.id = 'main-tab';
     mainTab.textContent = 'Main';
     const contactTab = document.createElement('button');
